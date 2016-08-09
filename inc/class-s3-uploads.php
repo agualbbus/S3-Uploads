@@ -123,8 +123,7 @@ class S3_Uploads {
 
 		$bucket = strtok( $this->bucket, '/' );
 		$path   = substr( $this->bucket, strlen( $bucket ) );
-		$s3_url = defined('S3_BASE_URL') ? S3_BASE_URL . $path : 'https://' . $bucket . '.s3.amazonaws.com' . $path;
-		return apply_filters( 's3_uploads_bucket_url', $s3_url );
+		return apply_filters( 's3_uploads_bucket_url', 'https://' . $bucket . '.s3.amazonaws.com' . $path );
 	}
 
 	/**
